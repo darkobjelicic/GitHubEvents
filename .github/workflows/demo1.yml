@@ -3,7 +3,17 @@ on:
   pull_request:
     types: 
       - opened
+    branches:
+      - main
+    branches-ignore:
+      - 'darkobjelicic/*'
   workflow_dispatch:
+  push:
+    branches: 
+      - main
+      - 'db/*' #db/feature1 db/feature2
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
